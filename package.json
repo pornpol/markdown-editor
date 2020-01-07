@@ -5,7 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "DEBUG=true electron .",
-    "build:macos": "electron-builder --macos --dir"
+    "build:macos": "electron-builder --macos --dir",
+    "dist:macos": "electron-builder --macos",
+    "publish:github": "build --mac -p always"
+  },
+  "build": {
+    "appId": "com.my.markdown-editor",
+    "publish": {
+      "provider": "github",
+      "owner": "pornpol",
+      "repo": "markdown-editor"
+    }
   },
   "keywords": [],
   "author": "",
@@ -15,6 +25,7 @@
     "electron-builder": "^21.2.0"
   },
   "dependencies": {
+    "electron-updater": "^4.2.0",
     "simplemde": "^1.11.2"
   }
 }
